@@ -14,14 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "87c461d6-a31e-4d3c-8216-1d6d7568c82e",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "d9cf794f-3900-427a-bfaf-7b2e26e7192a",
@@ -30,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Dash",
+                    "name": "Dive",
                     "type": "Button",
                     "id": "e8bd5b5c-7a5f-42fe-8ff5-b77fdf99c43d",
                     "expectedControlType": "Button",
@@ -38,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Dive",
+                    "name": "Ranged",
                     "type": "Button",
                     "id": "40b8137d-f499-4f94-bef2-d802abeeb73d",
                     "expectedControlType": "Button",
@@ -46,9 +38,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Grapple",
+                    "name": "Melee",
                     "type": "Button",
                     "id": "29e372b8-e455-4622-8342-14edaccb647f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "60bb0326-1f46-46cb-b8d1-4e29e2a4ccdf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -189,28 +189,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "InvertVector2(invertY=false)",
-                    "groups": ";Gamepad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3e5f5442-8668-4b27-a940-df99bad7e831",
-                    "path": "<Joystick>/{Hatswitch}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d6afe212-6465-4395-8ad7-968dcea9b01a",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -227,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Dash",
+                    "action": "Dive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -238,7 +216,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Dive",
+                    "action": "Ranged",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -249,7 +227,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Grapple",
+                    "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9799bae-7976-4553-8f93-6fcb9df15c66",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

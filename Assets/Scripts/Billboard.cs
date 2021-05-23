@@ -5,9 +5,19 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     public Transform cameraTransform;
+    public bool flippable;
 
     void LateUpdate()
     {
-        transform.rotation = this.cameraTransform.rotation;
+
+        if (flippable && Vector3.Dot(transform.right, this.cameraTransform.right) < 0)
+        {
+            transform.rotation = this.cameraTransform.rotation;
+            transform.right = this.cameraTransform.right * -1;
+        }
+        else
+        {
+            transform.rotation = this.cameraTransform.rotation;
+        }
     }
 }

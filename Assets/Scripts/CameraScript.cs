@@ -35,14 +35,16 @@ public class CameraScript : MonoBehaviour
         Vector3 otherPosition = Vector3.zero;
         foreach (CameraFocus focus in focusables)
         {
-            //if (focus != null && GeometryUtility.TestPlanesAABB(cameraPlanes, focus.attached_renderer.bounds) && (!otherFound || focus.priority > otherPriority))
             if (focus != null && (!otherFound || focus.priority > otherPriority)) {
-                Vector3 closestPoint = focus.attached_collider.ClosestPoint(player.transform.position);
-                if ((closestPoint - player.transform.position).magnitude < max_horizontal * 2)
-                {
-                    otherFound = true;
-                    otherPriority = focus.priority;
-                    otherPosition = closestPoint;
+                Collider attachedCollider = focus.attached_collider;
+                if (attachedCollider != null) {
+                    Vector3 closestPoint = attachedCollider.ClosestPoint(player.transform.position);
+                    if ((closestPoint - player.transform.position).magnitude < max_horizontal * 2)
+                    {
+                        otherFound = true;
+                        otherPriority = focus.priority;
+                        otherPosition = closestPoint;
+                    }
                 }
             }
         }
