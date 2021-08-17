@@ -7,9 +7,6 @@ public class Player : MonoBehaviour
 {
     public Transform cam;
 
-    private CharacterController controller;
-    private PlayerInput input;
-
     public float walkSpeed = 15.0f;
     public float dashSpeed = 20.0f;
     public float dashDistance = 5.0f;
@@ -37,10 +34,16 @@ public class Player : MonoBehaviour
     private float coyoteing = 0.0f;
     private Vector2 dashDirection = Vector2.zero;
 
+    private CharacterController controller;
+    private PlayerInput input;
+    private Animator animator;
+
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
         meleeAttack.active = false;
     }
 
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
         Vector2 horizontalVelocity = new Vector2(controller.velocity.x, controller.velocity.z);
         float currentSpeed = horizontalVelocity.magnitude;
         meleeAttack.active = input.actions["Melee"].ReadValue<float>() != 0;
+        animator.SetBool("Melee", meleeAttack.active);
         if (isDashing)
         {
             if (currentSpeed == 0 || dashLeft <= 0 || input.actions["Dash"].ReadValue<float>() == 0)
